@@ -1,0 +1,86 @@
+
+json Ê¹ÓÃ
+
+À´×Ô£ºhttp://bsr1983.iteye.com/blog/1700194
+
+1.ios½âÎöjson 
+Ê¹ÓÃ¿ªÔ´json°ü£¬ÏîÄ¿µØÖ·£º 
+     http://stig.github.com/json-framework/ 
+NSData * responseData = [respones responseData]; 
+      
+     NSString * strResponser = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]; 
+SBJsonParser * parser = [[SBJsonParser alloc]init]; 
+     NSMutableDictionary *dicMessageInfo = [parser objectWithString:strResponser]; // ½âÎö³Éjson½âÎö¶ÔÏó 
+[parser release]; 
+     //·¢ËÍÕß 
+     NSString * sender = [dicMessageInfo objectForKey:@"sender"]; 
+
+2.jsonÇ¶Ì×¶ÔÏó½âÎö£º 
+//ÒªÉÏ´«µÄ×Ö·û´® 
+    NSString *dataStr=[[NSString alloc] initWithString:@"{\"cross\":{\"1\":\"true\",\"2\":\"false\",\"3\":\"true\"}}"]; 
+//»ñÈ¡ÏìÓ¦·µ»Ø×Ö·û´® 
+NSData * responseData = [respones responseData]; 
+        
+        NSString * strResponser = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]; 
+//Ç¶Ì×½âÎö 
+SBJsonParser * parser = [[SBJsonParser alloc]init]; 
+            
+            NSMutableDictionary *dicMessageInfo = [parser objectWithString:strResponser]; // ½âÎö³Éjson½âÎö¶ÔÏó 
+            
+            NSMutableDictionary * cross = [dicMessageInfo objectForKey:@"cross"]; 
+            
+            NSString *cross1= [cross objectForKey:@"1"]; 
+            //½âÎöjsonµ½¸÷¸ö×Ö·û´® 
+            //·¢ËÍÕß 
+            [parser release]; 
+            NSLog(@"cross1: %@",cross1); 
+3.Æ´½Ójson×Ö·û´® 
+
+Í¨¹ıÊ¹ÓÃSBJsonÖĞµÄSBJsonWriterÀàµÄ·½·¨- (NSString*)stringWithObject:(id)value¿ÉÒÔ½«Ò»¸ö¶ÔÏóÖĞµÄÖµ¸ñÊ½»¯Îªjson×Ö·û´®£¬·ûºÏkey/value¸ñÊ½µÄÊı¾İ·â×°µ½NSDictionaryºó¿ÉÒÔÊ¹ÓÃ¸Ã·½·¨½øĞĞ¸ñÊ½»¯£¬ÆäËûÊı¾İÍ¨¹ıÆ´½Ó×Ö·û´®µÄ·½Ê½¸ñÊ½»¯¡£ 
+ÔÚÆ´½Ó¹ı³ÌÖĞ¿ÉÒÔÊ¹ÓÃÀàNSMutableStringµÄ·½·¨£º 
+- (void)appendString:(NSString *)aString;¡¢ 
+- (void)appendFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2); 
+¶¯Ì¬Ìí¼Ó×Ö·û´®¡£ 
+Æ´½ÓµÄ×Ö·û´®¿ÉÍ¨¹ıjsonÔÚÏßÑéÖ¤µÄ·½Ê½ÑéÖ¤Æä¸ñÊ½ÊÇ·ñÕıÈ·£¬ÍøÖ·Îª£º 
+http://jsonlint.com/ 
+-(NSString *) getJsonString 
+{ 
+    NSMutableString *json = [NSMutableString stringWithCapacity:128]; 
+    NSString *jsonString=nil; 
+    SBJsonWriter *writer = [[SBJsonWriter alloc] init]; 
+    [json appendString:@"{\"data\":{"]; 
+    [json appendFormat:@"\"%@\":\"%d\",",@"reset",reset]; 
+    if(missionStatus!=NULL) 
+    { 
+        jsonString=[writer stringWithObject:status]; 
+        if(jsonString!=NULL) 
+        { 
+            [json appendString:@"\"status\":"]; 
+            [json appendString:jsonString]; 
+        } 
+    } 
+    [json appendString:@"}}"]; 
+    return json; 
+} 
+4.ÀûÓÃ¶à¸öNSDictionary£¬Æ´½Ó¶à²ãÇ¶Ì×µÄjson×Ö·û´®£¬¼õÉÙÒòÊÖ¹¤Æ´½ÓÍü¼Ç¼ÓÒıºÅµ¼ÖÂµÄjson¸ñÊ½´íÎó 
+Ê¾Àı´úÂë£º 
+NSDictionary *dataDictionary= [NSDictionary dictionaryWithObjectsAndKeys:mac,@"mac", 
+                                   game,@"game", 
+                                   devicetoken,@"devicetoken", 
+                                   device,@"device", 
+                                   gv,@"gv", 
+                                   lang,@"lang", 
+                                   os,@"os", 
+                                   hardware,@"hardware", 
+                                   down,@"down",nil]; 
+    NSDictionary *parmDictionary= [NSDictionary dictionaryWithObjectsAndKeys:@"getSession",@"act", 
+                                   dataDictionary,@"data",nil]; 
+    NSDictionary *jsonDictionary=[NSDictionary dictionaryWithObjectsAndKeys:pv,@"pv", 
+                                  parmDictionary,@"param",nil]; 
+    SBJsonWriter *writer = [[SBJsonWriter alloc] init]; 
+    
+    NSString *jsonString=nil; 
+    jsonString=[writer stringWithObject:jsonDictionary]; 
+    NSLog(@"%@",jsonString); 
+5.json×Ö·û´®ÔÚÏßĞ£ÑéÍøÖ·£º 
+http://jsonlint.com/

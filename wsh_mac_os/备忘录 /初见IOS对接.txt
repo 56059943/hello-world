@@ -1,0 +1,57 @@
+½ÓÈë³õ¼ûIOS£­SDK´ò°üÁ÷³Ì
+
+²½Öè£¨ÒÑ¾­³É¹¦½ÓÈë£©£º
+1£¬Unity3d£­¡·µ¼³öXcodeÏîÄ¿
+2£¬¿½±´ÏÂÃæ4¸öÎÄ¼şºÍÎÄ¼ş¼Ğ
+data
+£¬il2cpp_output
+£¬MapFileParser
+£¬MapFileParser.sh
+£¬Ìæ»»µ½½ÓÈëºÃµÄXcodeÏîÄ¿
+3£¬ÔËĞĞ¼´¿É
+
+²½Öè£¨µÚÒ»´Î½ÓÈë£©£º
+1£¬unity3d£­¡·µ¼³öXcodeÏîÄ¿
+2£¬¿½±´Ò»·İXcodeµÄÏîÄ¿£¬ÓÃÓÚ¿ª·¢
+3£¬¿½±´SDKÖĞµÄ×ÊÔ´µ½ÏîÄ¿£¨LibSDK£¬Resources£©
+4£¬¿½±´WSH´úÂëµ½ÏîÄ¿£¨ÈçºÎÃ»ÓĞ£¬ĞÂ½¨ÎÄ¼ş¼Ğ¼°ÎÄ¼ş£©
+4£¬½«¿½±´ÄÚÈİÍÏµ½ÏîÄ¿ÖĞ£¬µ¯´°µã»÷Finish¼´¿É
+
+²¹³ä£º³õ¼û¶îÍâÔö¼ÓÁË2¸ö¿â£¬AdSupport£¬StoreKit
+³õ¼ûÒÀÀµ¿â
+, CoreText
+, CoreTelephony
+, Security
+, MobileCoreServices
+,libz.1.2.5.dylib
+TARGETS£­¡·Building Settings£­¡·Architectures£­¡·Architectures£­¡·Standard architectures£¨armv7£¬arm64£©
+PROJECT Í¬ÉÏ
+PROJECT£­¡·info£­¡·Deployment Target£­¡·IOS Deployment Target£­¡·8.1
+
+
+³£¼ûÎÊÌâ£º
+ÕÒ²»µ½*.dylib
+½â¾ö·½·¨£ºBuild Phases£­¡·Link Binary With Libraries£­¡·£«£­¡·Add Other£­¡·Í¬Ê±°´×¡°´ÏÂ
+£££«Shift£«G ÕÒµ½ /usr/lib/*.dylib
+
+Bitcode
+½â¾ö·½·¨£ºBuild Settings£­¡·Build Options£­¡·Enable Bitcode °Ñyes¸Ä³Éno
+
+@tryÎÊÌâ
+½â¾ö·½·¨£ºBuild Settings -> Apple LLVM 7.0-Language-ObjectiveC->Enable Objective-C Exceptions °Ñno¸Ä³Éyes
+
+Undefined symbols for architecture armv7:´íÎó½â¾ö·½·¨
+½â¾ö·½·¨£ºÕÒµ½È±ÉÙµÄ¿â¡£Ìí¼Ó¶¯Ì¬¿âµÄ·½·¨»ò²½ÖèÈçÏÂ£ºtargets--->build phases----->link binary with libraries----->+Ñ¡ÔñÒªÌí¼ÓµÄ¿â¡£
+²¹³ä£ºÈçºÎÕÒÈ´ÉÙµÄ¿â£¬ÀıÈç£º´íÎóÌáÊ¾¡±_OBJC_CLASS_$_ASIDataDecompressor", referenced from:
+	±íÊ¾£¬ASIDataDecompressorÕâ¸öÀàÕÒ²»µ½¿â£¬ÏîÄ¿ËÑË÷ÕÒµ½Ê¹ÓÃ¸ÃÀàµÄÎÄ¼ş£¬ÓÒ»÷£­¡·Jump to definition £­¡·²é¿´µ¼º½£¬µÃ³ö¿âÃû×Ö¡£
+
+
+No matching function for call to ¡°GameObj_SetHash_m_256232323_0¡±
+½â¾ö·½·¨£º¹Ë·²
+
+
+
+linker command failed with exit code 1 
+ÍøÉÏÕÒµ½µÄ½â¾ö·½·¨£ºarmv7 ÄãÃ»Ìí¼Ó
+ÎÊÌâÒÑ½â¾ö£¬²»¹ıÎÒÊÇ°ÑOther Linker FlagsÏÂµÄÊôĞÔÈ«É¾³ıÁË¡£
+ÎÒµÄ½â¾ö·½·¨£ºÉÏÃæÊÔ¹ı£¬ÎŞĞ§¡£½«SDKÌá¹©µÄ¿â¿½±´µ½LibrariesÏÂ£¬±àÒëÍ¨¹ı¡£¿ÉÒÔ¿Ï¶¨ºÍ»·¾³ÅäÖÃÓĞ¹Ø¡£
