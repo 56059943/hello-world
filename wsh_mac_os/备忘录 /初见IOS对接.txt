@@ -47,11 +47,12 @@ Undefined symbols for architecture armv7:´íÎó½â¾ö·½·¨
 
 
 No matching function for call to ¡°GameObj_SetHash_m_256232323_0¡±
-½â¾ö·½·¨£º¹Ë·²
-
-
+½â¾ö·½·¨£º½«ÍøÂçÄ£¿é±àÒë³Édll£¬µ¼³ö¼´¿É
 
 linker command failed with exit code 1 
 ÍøÉÏÕÒµ½µÄ½â¾ö·½·¨£ºarmv7 ÄãÃ»Ìí¼Ó
 ÎÊÌâÒÑ½â¾ö£¬²»¹ıÎÒÊÇ°ÑOther Linker FlagsÏÂµÄÊôĞÔÈ«É¾³ıÁË¡£
 ÎÒµÄ½â¾ö·½·¨£ºÉÏÃæÊÔ¹ı£¬ÎŞĞ§¡£½«SDKÌá¹©µÄ¿â¿½±´µ½LibrariesÏÂ£¬±àÒëÍ¨¹ı¡£¿ÉÒÔ¿Ï¶¨ºÍ»·¾³ÅäÖÃÓĞ¹Ø¡£
+
+IOSÔÚiphone7ÊÖ»úÉÏÎŞ·¨Á¬½Óµ½·şÎñÆ÷£¬»òÕßÁ¬½Ó¾Í»á¶Ï¿ª 
+½â¾ö·½·¨£ºÎÊÕşÎ¯ºÍ¹Â·«£¬ËûÃÇÖªµÀ
